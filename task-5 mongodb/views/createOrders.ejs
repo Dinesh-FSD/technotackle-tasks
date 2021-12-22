@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create-Orders page</title>
+</head>
+<body>
+    <h1>Create-Orders page</h1>
+    <h2>Welcome to the Create-Orders page</h2>
+    <ul>
+        <li><a href="/order">Create-Order page</a></li>
+        <li><a href="/order/about">About page</a></li>
+        <li><a href="/order/create-order">Create-Orders page</a></li>
+    </ul>
+
+    <div class="create">
+        <form  action="/order/create-order" method="post" >
+            <label for="title">Product_name :</label>
+            <input type="text" id="title" name="Product_name" required />
+            <label for="content">Product_desc :</label>
+            <input type="text" id="content" name="Product_desc" required />
+            <button>submit</button>
+        </form>
+    </div>
+</body>
+</html>

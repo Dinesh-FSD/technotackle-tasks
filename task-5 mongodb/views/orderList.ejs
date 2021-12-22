@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order list Page</title>
+</head>
+<body>
+    <h1>order list page</h1>
+    <h2> Welcome to the order list page </h2>
+    <ul>
+        <li><a href="/order">Order List page</a></li>
+        <li><a href="/order/about">About page</a></li>
+        <li><a href="/order/create-order">create order page</a></li>
+    </ul>
+    <div>
+        <h1>All services</h1>
+        <% if (Orders.length > 0) { %>
+         <% Orders.map(Order =>{ %>
+            <a href=/order/<%= Order._id %>  >
+            <h2><%= Order. Product_name %> </h2>
+        </a>
+            <p><%= Order.Product_desc %> <p>
+            
+            <% }) %> 
+        <% } %>
+    </div>
+</body>
+</html>

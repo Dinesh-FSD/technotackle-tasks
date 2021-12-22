@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Detail page</title>
+    <style>
+        a{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Details page</h1>
+    <h2>Welcome to the order detail page</h2>
+    <ul>
+        <li><a href="./order">Order page</a></li>
+        <li><a href="./order/about">About page</a></li>
+        <li><a href="./order/create-order">create order page</a></li>
+
+    </ul>
+    
+    <div>
+       <h1><%= data.Product_name %> </h1> 
+       <p><%= data.Product_desc %> </p>
+       <p><%= data._id %> </p>
+    </div>
+
+    <button type="submit">
+        <a class="delete" data-doc = "<%= data._id %> ">
+            delete 
+        </a>
+    </button>
+    
+
+    <script>
+        const eager = document.querySelector('a.delete');
+        eager.addEventListener('click',(e)=>{
+            const url = `del/${eager.dataset.doc}`;
+            console.log("the url is :",url)
+            fetch(url,{
+                method:'DELETE'
+            }).then((res)=>res.json())
+            .then((data)=> {
+                window.location.href= data.redirect
+            })
+            .catch(err=> console.log(err));
+        });
+    </script>
+</html>
